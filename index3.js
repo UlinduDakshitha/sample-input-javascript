@@ -17,3 +17,14 @@ const text3 = document.getElementById('inputPassword1').value.trim();
         console.log(Array);
     }
 }
+
+  
+    function addNumbers(){
+    var value = document.getElementById('inputPassword2').value
+    let num = value;
+    let sum=0;
+    for (let i = 0; i < num.length; i++) {
+        sum+=Number(num[i]);
+    }
+    document.getElementById("result4").innerHTML = `<h2>${sum}</h2>`;
+}

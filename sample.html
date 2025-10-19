@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Number Addition</title>
+</head>
+<body>
+
+  <h3>Live Add Numbers</h3>
+
+  <input type="number" id="numInput" placeholder="Enter a number">
+  <p><strong>Numbers Entered:</strong> <span id="numbersList"></span></p>
+  <p><strong>Total:</strong> <span id="total">0</span></p>
+
+  <script>
+    let numbers = [];
+    const input = document.getElementById("numInput");
+    const numbersList = document.getElementById("numbersList");
+    const totalDisplay = document.getElementById("total");
+
+    // When user types and presses Enter
+    input.addEventListener("input", function() {
+      let num = parseFloat(input.value);
+      if (!isNaN(num)) {
+        // Add number to array (if not already last added)
+        numbers[numbers.length - 1] = num;
+      } else {
+        numbers.pop(); // remove invalid
+      }
+
+      numbersList.innerText = numbers.join(", ");
+      let total = numbers.reduce((a, b) => a + b, 0);
+      totalDisplay.innerText = total;
+    });
+
+    // When user presses Enter, lock the number and clear input
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        let num = parseFloat(input.value);
+        if (!isNaN(num)) {
+          numbers.push(num);
+          numbersList.innerText = numbers.join(", ");
+          let total = numbers.reduce((a, b) => a + b, 0);
+          totalDisplay.innerText = total;
+          input.value = "";
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
