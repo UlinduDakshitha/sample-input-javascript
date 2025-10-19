@@ -88,3 +88,25 @@ function showText(){
       let output = storedItems.join(", ");  
       document.getElementById("result6").innerText = output;
     }
+
+ let randomNums = [];
+
+    window.onload = function() {
+      for (let i = 0; i < 10; i++) {
+        randomNums.push(Math.floor(Math.random() * 100) + 1);
+      }
+      document.getElementById("result7").innerText = randomNums.join(", ");
+    };
+ 
+    function checkDivisible() {
+      let userValue = parseInt(document.getElementById("inputPassword5").value);
+
+      if (isNaN(userValue) || userValue === 0) {
+        alert("Please enter a valid number (not 0)");
+        return;
+      }   
+      let divisible = randomNums.filter(num => num % userValue === 0);
+ 
+      document.getElementById("result8").innerText =
+        divisible.length > 0 ? divisible.join(", ") : "No numbers divide evenly.";
+    }
