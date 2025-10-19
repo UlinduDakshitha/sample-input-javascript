@@ -72,3 +72,19 @@ function showText(){
         document.getElementById("result6").innerHTML = `<h2>Error: Invalid Input</h2>`;
     }
 }
+
+  let storedItems = [];
+ 
+    function storeInput() {
+      let value = document.getElementById("inputPassword4").value;
+      if (value.trim() !== "") {  
+        storedItems.push(value);  
+        document.getElementById("inputPassword4").value = "";  
+         
+      }  
+    }
+
+    function showInputs() {
+      let output = storedItems.join(", ");  
+      document.getElementById("result6").innerText = output;
+    }
