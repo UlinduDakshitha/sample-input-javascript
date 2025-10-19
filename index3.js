@@ -18,7 +18,6 @@ const text3 = document.getElementById('inputPassword1').value.trim();
     }
 }
 
-  
     function addNumbers(){
     var value = document.getElementById('inputPassword2').value
     let num = value;
@@ -27,4 +26,24 @@ const text3 = document.getElementById('inputPassword1').value.trim();
         sum+=Number(num[i]);
     }
     document.getElementById("result4").innerHTML = `<h2>${sum}</h2>`;
+}
+
+function showResult(){
+    var value = document.getElementById('inputPassword3').value;
+    
+    if(value<=35){
+        document.getElementById("result5").innerHTML = `<h2>F</h2>`;
+    }
+    else if(value>=35){
+        document.getElementById("result5").innerHTML = `<h2>D</h2>`;
+    }
+    else if(value>=55){
+        document.getElementById("result5").innerHTML = `<h2>C</h2>`;
+    }
+    else if(value>=65){
+        document.getElementById("result5").innerHTML = `<h2>B</h2>`;
+    }
+    else{
+        document.getElementById("result5").innerHTML = `<h2>A</h2>`;
+    }
 }
