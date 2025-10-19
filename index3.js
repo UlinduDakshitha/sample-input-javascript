@@ -47,3 +47,28 @@ function showResult(){
         document.getElementById("result5").innerHTML = `<h2>A</h2>`;
     }
 }
+
+function showText(){
+    var value = document.getElementById('inputPassword4').value;
+
+    switch(value){
+
+        case 'Intern':
+            document.getElementById("result6").innerHTML = `<h2>Intern Software Engineer</h2>`;
+        break;
+    case 'ASE':
+        document.getElementById("result6").innerHTML = `<h2>Associate Software Engineer</h2>`;
+        break;  
+
+    case 'SSE':
+        document.getElementById("result6").innerHTML = `<h2> Senior Software Engineer</h2>`;
+        break;
+
+    case 'TL':
+        document.getElementById("result6").innerHTML = `<h2>Tech Lead</h2>`;
+        break;
+
+    default:
+        document.getElementById("result6").innerHTML = `<h2>Error: Invalid Input</h2>`;
+    }
+}
